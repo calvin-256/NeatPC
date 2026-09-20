@@ -1,0 +1,120 @@
+/* ===========================================
+   NeatPC — Footer Styles
+   =========================================== */
+
+.footer {
+  margin-top: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+/* --- Brand --- */
+
+.brand {
+  max-width: 280px;
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.logoAccent {
+  color: var(--accent-color, #00d2ff);
+  text-shadow: 0 0 10px rgba(0, 210, 255, 0.3);
+}
+
+.tagline {
+  font-size: 0.85rem;
+  color: #71717a;
+  line-height: 1.6;
+}
+
+/* --- Links --- */
+
+.links {
+  display: flex;
+  gap: 3.5rem;
+}
+
+.linkGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.linkGroupTitle {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #a1a1aa;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.9rem;
+}
+
+.linkList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.link {
+  font-size: 0.88rem;
+  color: #71717a;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: #fff;
+}
+
+/* --- Bottom --- */
+
+.bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.25rem 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.copyright {
+  font-size: 0.78rem;
+  color: #52525b;
+}
+
+/* --- Responsive --- */
+
+@media (max-width: 768px) {
+  .inner {
+    flex-direction: column;
+    padding: 2rem 1.25rem 1.5rem;
+    gap: 2rem;
+  }
+
+  .brand {
+    max-width: unset;
+  }
+
+  .links {
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .bottom {
+    padding: 1rem 1.25rem;
+  }
+}

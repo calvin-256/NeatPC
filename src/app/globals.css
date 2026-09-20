@@ -1,18 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
+/* ===========================================
+   NeatPC — Global Styles & Design Tokens
+   =========================================== */
 
 :root {
   --bg-color: #0f1115;
+  --bg-elevated: #1a1b1f;
   --text-color: #e2e8f0;
+  --text-muted: #a1a1aa;
+  --text-dim: #71717a;
   --accent-color: #00d2ff;
   --accent-glow: rgba(0, 210, 255, 0.3);
   --card-bg: rgba(255, 255, 255, 0.03);
-  --card-border: rgba(255, 255, 255, 0.1);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --success: #4ade80;
+  --warning: #facc15;
+  --danger: #f87171;
+  --info: #60a5fa;
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -22,7 +35,28 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+/* --- Main Content Area --- */
+
+.main-content {
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1.25rem;
+  }
+}
+
+/* --- Legacy Page Styles (quiz flow) --- */
+/* These will be refactored into CSS modules in later commits */
 
 .container {
   max-width: 1200px;
@@ -34,48 +68,29 @@ body {
   flex-direction: column;
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 4rem;
-}
-
-.logo {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: #fff;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.logo span {
-  color: var(--accent-color);
-  text-shadow: 0 0 10px var(--accent-glow);
-}
-
 .hero {
   text-align: center;
   margin-bottom: 4rem;
+  padding-top: 4rem;
 }
 
 .hero h1 {
   font-size: 4rem;
   font-weight: 800;
   margin-bottom: 1rem;
-  background: linear-gradient(90deg, #fff, #a1a1aa);
+  background: linear-gradient(135deg, #fff 0%, #a1a1aa 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.1;
 }
 
 .hero p {
   font-size: 1.25rem;
-  color: #a1a1aa;
+  color: var(--text-muted);
   max-width: 600px;
   margin: 0 auto;
+  line-height: 1.6;
 }
 
 .card {
@@ -140,17 +155,56 @@ body {
 .input-field {
   width: 100%;
   padding: 1rem;
-  background: rgba(0,0,0,0.2);
+  background: rgba(0, 0, 0, 0.25);
   border: 1px solid var(--card-border);
-  border-radius: 8px;
+  border-radius: 10px;
   color: #fff;
   font-family: inherit;
   font-size: 1rem;
   margin-top: 1rem;
+  outline: none;
+  transition: all 0.25s ease;
 }
 
 .input-field:focus {
-  outline: none;
   border-color: var(--accent-color);
-  box-shadow: 0 0 10px var(--accent-glow);
+  box-shadow: 0 0 0 3px rgba(0, 210, 255, 0.1), 0 0 12px rgba(0, 210, 255, 0.08);
+}
+
+/* --- Scrollbar --- */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* --- Selection --- */
+
+::selection {
+  background: rgba(0, 210, 255, 0.25);
+  color: #fff;
+}
+
+/* --- Responsive Typography --- */
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1.05rem;
+  }
 }

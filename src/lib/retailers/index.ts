@@ -14,6 +14,7 @@ export { normalizeSpecs, getMatchingKey, detectCategory, generateProductSlug } f
 
 // Import adapters
 import { AmazonAdapter } from './amazon';
+import { BestBuyAdapter } from './bestbuy';
 
 // --- Adapter Registry ---
 
@@ -84,5 +85,5 @@ export async function searchAllRetailers(
 
 // --- Auto-register all adapters ---
 registerAdapter(new AmazonAdapter());
-// Future: registerAdapter(new BestBuyAdapter());
+registerAdapter(new BestBuyAdapter());
 // Future: registerAdapter(new NeweggAdapter());

@@ -1,6 +1,6 @@
 # NeatPC
 
-> AI-powered deal finder that cross-references prices across the internet to find you the best laptop, phone, or PC for your needs and budget.
+> AI-powered deal finder that cross-references prices across the internet to find you the best laptop, phone, or PC for your needs and your budget.
 
 ## What It Does
 

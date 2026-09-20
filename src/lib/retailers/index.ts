@@ -12,6 +12,9 @@ export type { IRetailerAdapter, RawRetailerProduct, RetailerSearchOptions, Retai
 export { BaseRetailerAdapter } from './base';
 export { normalizeSpecs, getMatchingKey, detectCategory, generateProductSlug } from './normalizer';
 
+// Import adapters
+import { AmazonAdapter } from './amazon';
+
 // --- Adapter Registry ---
 
 const adapters = new Map<RetailerSlug, IRetailerAdapter>();
@@ -78,3 +81,8 @@ export async function searchAllRetailers(
 
   return allProducts;
 }
+
+// --- Auto-register all adapters ---
+registerAdapter(new AmazonAdapter());
+// Future: registerAdapter(new BestBuyAdapter());
+// Future: registerAdapter(new NeweggAdapter());

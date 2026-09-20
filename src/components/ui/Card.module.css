@@ -1,0 +1,74 @@
+/* ===========================================
+   NeatPC — Card Styles
+   =========================================== */
+
+.card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --- Variants --- */
+
+.interactive {
+  cursor: pointer;
+}
+
+.interactive:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0, 210, 255, 0.3);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    0 0 16px rgba(0, 210, 255, 0.1);
+}
+
+.interactive:active {
+  transform: translateY(-2px);
+}
+
+.highlight {
+  border-color: rgba(0, 210, 255, 0.25);
+  background: rgba(0, 210, 255, 0.04);
+  box-shadow: 0 0 24px rgba(0, 210, 255, 0.08);
+}
+
+/* --- Padding --- */
+
+.pad-none {
+  padding: 0;
+}
+
+.pad-sm {
+  padding: 1rem;
+}
+
+.pad-md {
+  padding: 1.5rem;
+}
+
+.pad-lg {
+  padding: 2rem;
+}
+
+/* --- Sub-components --- */
+
+.header {
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.content {
+  flex: 1;
+}
+
+.footer {
+  padding-top: 1rem;
+  margin-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}

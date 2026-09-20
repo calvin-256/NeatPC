@@ -1,0 +1,86 @@
+/* ===========================================
+   NeatPC — Input Styles
+   =========================================== */
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #a1a1aa;
+  padding-left: 0.1rem;
+}
+
+.inputContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: #fff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+  outline: none;
+}
+
+.input::placeholder {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.input:focus {
+  border-color: var(--accent-color, #00d2ff);
+  box-shadow: 0 0 0 3px rgba(0, 210, 255, 0.1), 0 0 12px rgba(0, 210, 255, 0.08);
+}
+
+.hasIcon .input,
+.input.hasIcon {
+  padding-left: 2.6rem;
+}
+
+.icon {
+  position: absolute;
+  left: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  color: #a1a1aa;
+  font-size: 1.05rem;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* --- Error state --- */
+
+.hasError .input {
+  border-color: rgba(239, 68, 68, 0.5);
+}
+
+.hasError .input:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.error {
+  font-size: 0.78rem;
+  color: #f87171;
+  padding-left: 0.1rem;
+}
+
+.hint {
+  font-size: 0.78rem;
+  color: #71717a;
+  padding-left: 0.1rem;
+}

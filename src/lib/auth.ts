@@ -12,8 +12,8 @@ import CredentialsProvider from 'next-auth/providers/credentials';
 import prisma from '@/lib/db';
 
 export const authOptions: NextAuthOptions = {
-  // @ts-expect-error - PrismaAdapter types are slightly off between versions
-  adapter: PrismaAdapter(prisma),
+  adapter: PrismaAdapter(prisma) as NextAuthOptions['adapter'],
+
 
   providers: [
     // --- Google OAuth ---

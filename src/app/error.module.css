@@ -1,0 +1,89 @@
+/* ===========================================
+   NeatPC — Error Page Styles
+   =========================================== */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 50vh;
+  padding: 3rem 1.5rem;
+  gap: 1rem;
+}
+
+.iconWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: rgba(239, 68, 68, 0.08);
+  color: #f87171;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.message {
+  font-size: 1rem;
+  color: #a1a1aa;
+  max-width: 440px;
+  line-height: 1.6;
+}
+
+.digest {
+  font-size: 0.75rem;
+  color: #52525b;
+  font-family: monospace;
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.retryBtn,
+.homeBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: 'Outfit', sans-serif;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.retryBtn {
+  background: linear-gradient(135deg, #00d2ff 0%, #0090ff 100%);
+  color: #000;
+  border: none;
+  box-shadow: 0 2px 12px rgba(0, 210, 255, 0.25);
+}
+
+.retryBtn:hover {
+  box-shadow: 0 4px 24px rgba(0, 210, 255, 0.4);
+  transform: translateY(-1px);
+}
+
+.homeBtn {
+  background: transparent;
+  color: #a1a1aa;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.homeBtn:hover {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.25);
+}

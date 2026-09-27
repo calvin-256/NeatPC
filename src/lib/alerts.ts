@@ -4,7 +4,7 @@
 // Core logic for processing price alerts and triggering notifications.
 
 import prisma from '@/lib/db';
-import { sendEmail } from '@/lib/email'; // Assume this will be built in Phase 5
+import { sendEmail, EmailTemplates } from '@/lib/email';
 import config from '@/lib/config';
 
 /**
@@ -44,10 +44,17 @@ export async function checkPriceAlerts(productId: string, currentBestPrice: numb
       },
     });
 
-    // We will send real emails in Phase 5. For now, log it.
     if (config.email.isConfigured) {
-      // Stub for email sending
-      console.log(`[Alert] 📧 Sending email to ${alert.user.email} - ${alert.product.name} is now $${currentBestPrice}!`);
+      await sendEmail({
+        to: alert.user.email,
+        subject: `Price Drop Alert: ${alert.product.name} is now $${currentBestPrice}!`,
+        html: EmailTemplates.priceAlert(
+          alert.product.name, 
+          alert.targetPrice, 
+          currentBestPrice, 
+          `${config.appUrl}/product/${alert.product.slug}`
+        )
+      });
     } else {
       console.log(`[Alert] 🔔 Target met for user ${alert.userId}: ${alert.product.name} dropped to $${currentBestPrice}`);
     }

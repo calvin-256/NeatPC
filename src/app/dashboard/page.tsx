@@ -111,11 +111,11 @@ export default async function DashboardPage() {
                         </td>
                         <td style={{ padding: '1rem' }}>
                           {alert.triggered ? (
-                            <Badge variant="default" style={{ color: '#f59e0b', borderColor: '#f59e0b', border: '1px solid' }}>Triggered</Badge>
+                            <Badge variant="warning">Triggered</Badge>
                           ) : alert.isActive ? (
-                            <Badge variant="default" style={{ color: '#10b981', borderColor: '#10b981', border: '1px solid' }}>Active</Badge>
+                            <Badge variant="success">Active</Badge>
                           ) : (
-                            <Badge variant="default" style={{ border: '1px solid' }}>Inactive</Badge>
+                            <Badge variant="default">Inactive</Badge>
                           )}
                         </td>
                       </tr>

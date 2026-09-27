@@ -55,9 +55,9 @@ export default async function DashboardPage() {
         <aside style={{ flex: '1 1 250px' }}>
           <div className="card" style={{ padding: '1rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
             <Button variant="primary" style={{ justifyContent: 'flex-start' }}>Saved Deals</Button>
-            <Button variant="outline" style={{ justifyContent: 'flex-start', border: 'none' }}>Price Alerts</Button>
-            <Button variant="outline" style={{ justifyContent: 'flex-start', border: 'none' }}>Chat History</Button>
-            <Button variant="outline" style={{ justifyContent: 'flex-start', border: 'none' }}>Settings</Button>
+            <Button variant="ghost" style={{ justifyContent: 'flex-start', border: 'none' }}>Price Alerts</Button>
+            <Button variant="ghost" style={{ justifyContent: 'flex-start', border: 'none' }}>Chat History</Button>
+            <Button variant="ghost" style={{ justifyContent: 'flex-start', border: 'none' }}>Settings</Button>
           </div>
         </aside>
 
@@ -111,11 +111,11 @@ export default async function DashboardPage() {
                         </td>
                         <td style={{ padding: '1rem' }}>
                           {alert.triggered ? (
-                            <Badge variant="outline" style={{ color: '#f59e0b', borderColor: '#f59e0b' }}>Triggered</Badge>
+                            <Badge variant="default" style={{ color: '#f59e0b', borderColor: '#f59e0b', border: '1px solid' }}>Triggered</Badge>
                           ) : alert.isActive ? (
-                            <Badge variant="outline" style={{ color: '#10b981', borderColor: '#10b981' }}>Active</Badge>
+                            <Badge variant="default" style={{ color: '#10b981', borderColor: '#10b981', border: '1px solid' }}>Active</Badge>
                           ) : (
-                            <Badge variant="outline">Inactive</Badge>
+                            <Badge variant="default" style={{ border: '1px solid' }}>Inactive</Badge>
                           )}
                         </td>
                       </tr>

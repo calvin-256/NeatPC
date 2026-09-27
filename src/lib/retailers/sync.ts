@@ -7,6 +7,7 @@
 import prisma from '@/lib/db';
 import { getAdapter, getConfiguredAdapters } from './index';
 import { updateProductDealScore } from '@/lib/scoring';
+import { checkPriceAlerts } from '@/lib/alerts';
 
 export interface SyncStats {
   productsChecked: number;
@@ -103,6 +104,9 @@ export async function syncPrices(productIds: string[]): Promise<SyncStats> {
     // 4. Always recalculate the deal score for this product
     if (priceUpdated) {
       await updateProductDealScore(product.id);
+      
+      // 5. Check if any price alerts were triggered by this price change
+      await checkPriceAlerts(product.id, bestPrice);
     }
   }
 

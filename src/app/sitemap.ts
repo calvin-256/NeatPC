@@ -2,6 +2,9 @@ import { MetadataRoute } from 'next';
 import prisma from '@/lib/db';
 import config from '@/lib/config';
 
+// Reads the DB, so render per request; prerendering at build needs a live database.
+export const dynamic = 'force-dynamic';
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = config.appUrl;
 
@@ -18,12 +21,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
       changeFrequency: 'daily' as const,
       priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/compare`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly' as const,
-      priority: 0.7,
     },
   ];
 

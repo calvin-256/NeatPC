@@ -43,6 +43,6 @@ jobs:
         run: npm run build
         env:
           # Provide dummy env vars for build (no real keys needed)
-          DATABASE_URL: 'file:./dev.db'
+          DATABASE_URL: 'postgresql://ci:ci@localhost:5432/ci'
           NEXTAUTH_SECRET: 'ci-build-secret'
           NEXTAUTH_URL: 'http://localhost:3000'

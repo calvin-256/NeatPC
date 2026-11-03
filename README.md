@@ -12,7 +12,7 @@
 
 - **Framework**: Next.js 14 (App Router)
 - **AI**: Google Gemini
-- **Database**: Prisma + SQLite (dev) / Postgres (prod)
+- **Database**: Prisma + Postgres
 - **Auth**: NextAuth.js
 - **Styling**: Vanilla CSS + Framer Motion
 - **Hosting**: Vercel
@@ -27,7 +27,10 @@ npm install
 cp .env.example .env.local
 # Edit .env.local with your API keys
 
-# 3. Run the dev server
+# 3. Create the database tables
+npm run db:push
+
+# 4. Run the dev server
 npm run dev
 ```
 

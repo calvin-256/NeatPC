@@ -30,7 +30,7 @@ export const config = {
 
   // Database
   database: {
-    url: getEnv('DATABASE_URL') || 'file:./dev.db',
+    url: getEnv('DATABASE_URL'),
   },
 
   // Auth
